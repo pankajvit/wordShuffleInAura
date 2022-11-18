@@ -1,0 +1,33 @@
+<template>
+    
+    <lightning-layout class="slds-align_absolute-center slds-text-align_center container" multiple-rows="true">
+        <lightning-layout-item size="12">
+            <lightning-button
+            variant="brand"
+            label="Assing To"
+            title="Begins the task"
+            onclick={handleClick}
+            >
+            </lightning-button>
+        </lightning-layout-item>
+        <!-- <lightning-layout-item > -->
+            <lightning-combobox if:true={showUserList}
+                name="progress"
+                label=""
+                value={value}
+                placeholder="Select Team Member"
+                options={options}
+                onchange={handleChange} >
+            </lightning-combobox>
+        <!-- </lightning-layout-item> -->
+        <lightning-layout-item size="12" if:true={showUserList}>
+            <lightning-button
+            variant="brand"
+            label="OK"
+            title=""
+            onclick={assignMember}
+            >
+            </lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

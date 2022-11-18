@@ -38,10 +38,12 @@
             // user has won
             component.set("v.result", "YOU WIN");
             console.log("You win");
+            helper.disableBoard(component);
         } else if(clickCount === 3)  {
             // user lose
             component.set("v.result", "YOU LOSE");
             console.log("You lose");
+            helper.disableBoard(component)
         }
         // set click count
         component.set("v.clickCount", clickCount);

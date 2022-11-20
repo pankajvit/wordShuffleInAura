@@ -9,8 +9,12 @@
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <!--<aura:handler name="render" value="{!this}" action="{!c.doRender}"/>-->
-    <aura:handler name="onclick" event="c:BlockClickEvent" action="{!c.blockClickHandler}" /> 
+    <!--<aura:handler name="onclick" event="c:BlockClickEvent" action="{!c.blockClickHandler}" /> --> 
     
+    <aura:method name="startGame" action="{!c.doInit}" description="Start new Game"></aura:method>    
+    
+    <aura:method name="reshuffleBoard" action="{!c.reshuffleBoard}" description="Reshuffle Board">
+    </aura:method> 
     <div class="board"> 
         <lightning:layout>
             <lightning:layoutItem padding="around-small">
@@ -30,9 +34,9 @@
         </aura:if>
         
         <lightning:layout multipleRows="true">
-            <aura:iteration items="{! v.words}" var="word">
+            <aura:iteration items="{! v.words}" var="wordObj">
             	<lightning:layoutItem size="{! v.blockSize}" padding="around-small">
-            		<c:Block label="{! word}" >
+            		<c:Block label="{! wordObj.word}" open="{!wordObj.open}" onclick="{!c.blockClickHandler}">
                     </c:Block>
                 </lightning:layoutItem> 
             </aura:iteration>  

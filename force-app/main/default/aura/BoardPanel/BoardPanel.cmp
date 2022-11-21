@@ -1,4 +1,4 @@
-<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="BoardPanelController">
     <aura:attribute name="modes" type="List" default="[
     	{'label': 'New', 'value': 'new'},
     	{'label': 'Medium', 'value': 'medium'},

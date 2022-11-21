@@ -67,15 +67,15 @@ public class AssignPodTest {
         //System.debug(locationPods);
         
     	//compare with stage substage of the metadata
-        List<Loan_Application__c> finallapplications = CreateDTWT.checkMetadataAvailbility(loanApplications);
+        //List<Loan_Application__c> finallapplications = CreateDTWT.checkMetadataAvailbility(loanApplications);
         //Check if dtwt exists
-		CreateDTWT.removingExistingDTWT(finallapplications);
+		//CreateDTWT.removingExistingDTWT(finallapplications);
         //System.debug(finallapplications);
             	
     	//create dtwt record.
     	List<DTWT__c> dtwtList = new List<DTWT__c>(); 
         List<Pod__c> podid = [select id from Pod__c];
-    	dtwtList = CreateDTWT.createRecord(finallapplications,locationPods);
+    	//dtwtList = CreateDTWT.createRecord(finallapplications,locationPods);
         AssignPod.stampPodToDTWT(dtwtList,locationPods);
         List<DTWT__c> createdDTWT = [SELECT Id, Name, Pod__c FROM DTWT__c];
         system.debug(createdDTWT.size());

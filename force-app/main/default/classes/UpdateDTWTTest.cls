@@ -81,7 +81,7 @@ public class UpdateDTWTTest {
         update loanAppRecord;
         
         //After the change of all loan application, we are passing the loan application
-        UpdateDTWT.updateDTWTfilds([select Id,Name, Location__c, Business_unit__c, Stage__c, Sub_Stage__c from Loan_Application__c]);
+        //UpdateDTWT.updateDTWTfilds([select Id,Name, Location__c, Business_unit__c, Stage__c, Sub_Stage__c from Loan_Application__c]);
         //updateDTWTfilds will change stage and substage of loan applications
         List<DTWT__c> changedDTWT = new List<DTWT__c>();
         changedDTWT = [select Id, Stage__c,subStage__c from DTWT__c];

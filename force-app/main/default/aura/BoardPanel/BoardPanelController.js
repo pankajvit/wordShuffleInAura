@@ -26,8 +26,10 @@
         const result = event.getParam("result");
         if(result === "win"){
            component.set("v.reshuffleDisabled", true); 
+           
         } else {
            component.set("v.reshuffleDisabled", false); 
         }
+        helper.addResultRecord(component, result);
     }
 })
